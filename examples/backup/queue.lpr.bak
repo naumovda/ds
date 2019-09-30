@@ -5,6 +5,9 @@ const
   MAXSIZE = 100;
 
 type
+  //класс для работы с очередью целых чисел
+  PQueueInt = ^QueueInt;
+
   // class QueueInt
   //
   // Обеспечивает функциональность для хранения целых чисел
@@ -156,17 +159,9 @@ begin
   q.Enqueue(2);
   q.Enqueue(7);
   q.Enqueue(13);
-
   // Вывод очереди
   q.Print;
 
-  //Удаление элемента из очереди
-  q.Dequeue();
-
-  // Вывод очереди
-  q.Print;
-
-  //Удаление трех элементов из очереди
   q.Dequeue();
   q.Dequeue();
   q.Dequeue();
@@ -174,11 +169,7 @@ begin
   // Вывод очереди
   q.Print;
 
-  //Попытка удаления элементов из пустой очереди
   q.Dequeue();
-
-  writeln('Press Enter to quit...');
-  readln;
 end;
 
 
