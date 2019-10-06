@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <Version Value="11"/>
+    <BuildModes Active="Default"/>
+    <Units Count="6">
+      <Unit0>
+        <Filename Value="figure_test.pas"/>
+        <IsPartOfProject Value="True"/>
+        <CursorPos X="14" Y="6"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="figure_common.pas"/>
+        <EditorIndex Value="3"/>
+        <CursorPos X="24" Y="7"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="figure_point.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="34"/>
+        <UsageCount Value="10"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="figure_abstract.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="38"/>
+        <UsageCount Value="20"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="figure_pixel.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="8"/>
+        <CursorPos X="35" Y="19"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="figure_circle.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="2"/>
+        <CursorPos Y="7"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit5>
+    </Units>
+    <JumpHistory Count="28" HistoryIndex="27">
+      <Position1>
+        <Filename Value="figure_test.pas"/>
+        <Caret Line="7" Column="10"/>
+      </Position1>
+      <Position2>
+        <Filename Value="figure_test.pas"/>
+        <Caret Line="3" Column="15"/>
+      </Position2>
+      <Position3>
+        <Filename Value="figure_test.pas"/>
+        <Caret Line="11" Column="3"/>
+      </Position3>
+      <Position4>
+        <Filename Value="figure_test.pas"/>
+        <Caret Line="4" Column="14"/>
+      </Position4>
+      <Position5>
+        <Filename Value="figure_test.pas"/>
+        <Caret Line="6" Column="6"/>
+      </Position5>
+      <Position6>
+        <Filename Value="figure_test.pas"/>
+        <Caret Line="13"/>
+      </Position6>
+      <Position7>
+        <Filename Value="figure_test.pas"/>
+        <Caret Line="15"/>
+      </Position7>
+      <Position8>
+        <Filename Value="figure_test.pas"/>
+        <Caret Line="17" Column="10"/>
+      </Position8>
+      <Position9>
+        <Filename Value="figure_test.pas"/>
+        <Caret Line="15" Column="23"/>
+      </Position9>
+      <Position10>
+        <Filename Value="figure_pixel.pas"/>
+        <Caret Line="168" TopLine="145"/>
+      </Position10>
+      <Position11>
+        <Filename Value="figure_pixel.pas"/>
+        <Caret Line="101" Column="19" TopLine="87"/>
+      </Position11>
+      <Position12>
+        <Filename Value="figure_pixel.pas"/>
+        <Caret Line="114" Column="20" TopLine="89"/>
+      </Position12>
+      <Position13>
+        <Filename Value="figure_pixel.pas"/>
+        <Caret Line="121" Column="24" TopLine="107"/>
+      </Position13>
+      <Position14>
+        <Filename Value="figure_pixel.pas"/>
+        <Caret Line="126" Column="54" TopLine="113"/>
+      </Position14>
+      <Position15>
+        <Filename Value="figure_pixel.pas"/>
+        <Caret Line="67" Column="36" TopLine="41"/>
+      </Position15>
+      <Position16>
+        <Filename Value="figure_pixel.pas"/>
+        <Caret Line="127" Column="46" TopLine="114"/>
+      </Position16>
+      <Position17>
+        <Filename Value="figure_common.pas"/>
+        <Caret Line="81" Column="27" TopLine="54"/>
+      </Position17>
+      <Position18>
+        <Filename Value="figure_test.pas"/>
+        <Caret Line="6" Column="14"/>
+      </Position18>
+      <Position19>
+        <Filename Value="figure_common.pas"/>
+        <Caret Line="18" Column="34" TopLine="8"/>
+      </Position19>
+      <Position20>
+        <Filename Value="figure_circle.pas"/>
+        <Caret Line="22" Column="13" TopLine="12"/>
+      </Position20>
+      <Position21>
+        <Filename Value="figure_circle.pas"/>
+        <Caret Line="85" Column="25" TopLine="73"/>
+      </Position21>
+      <Position22>
+        <Filename Value="figure_circle.pas"/>
+        <Caret Line="24" Column="30" TopLine="15"/>
+      </Position22>
+      <Position23>
+        <Filename Value="figure_circle.pas"/>
+        <Caret Line="38" Column="27" TopLine="22"/>
+      </Position23>
+      <Position24>
+        <Filename Value="figure_common.pas"/>
+        <Caret Line="7" Column="24"/>
+      </Position24>
+      <Position25>
+        <Filename Value="figure_circle.pas"/>
+        <Caret Line="32" Column="28" TopLine="15"/>
+      </Position25>
+      <Position26>
+        <Filename Value="figure_circle.pas"/>
+        <Caret Line="41" Column="28" TopLine="27"/>
+      </Position26>
+      <Position27>
+        <Filename Value="figure_circle.pas"/>
+        <Caret Line="61" Column="24" TopLine="52"/>
+      </Position27>
+      <Position28>
+        <Filename Value="figure_circle.pas"/>
+        <Caret Line="73" Column="24" TopLine="63"/>
+      </Position28>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>
