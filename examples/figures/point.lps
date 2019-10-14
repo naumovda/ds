@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <Version Value="11"/>
+    <BuildModes Active="Default"/>
+    <Units Count="2">
+      <Unit0>
+        <Filename Value="point.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <CursorPos Y="11"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="/usr/share/fpcsrc/3.0.4/rtl/objpas/objpas.pp"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="21"/>
+        <CursorPos X="8" Y="35"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit1>
+    </Units>
+    <JumpHistory Count="2" HistoryIndex="1">
+      <Position1>
+        <Filename Value="/usr/share/fpcsrc/3.0.4/rtl/objpas/objpas.pp"/>
+      </Position1>
+      <Position2>
+        <Filename Value="/usr/share/fpcsrc/3.0.4/rtl/objpas/objpas.pp"/>
+        <Caret Line="35" Column="8" TopLine="21"/>
+      </Position2>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

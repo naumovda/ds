@@ -3,16 +3,61 @@
   <ProjectSession>
     <Version Value="11"/>
     <BuildModes Active="Default"/>
-    <Units Count="1">
+    <Units Count="9">
       <Unit0>
         <Filename Value="figures_test.lpr"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="-1"/>
         <CursorPos X="4" Y="6"/>
         <UsageCount Value="20"/>
-        <Loaded Value="True"/>
       </Unit0>
+      <Unit1>
+        <Filename Value="figure_abstract.pas"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="figure_circle.pas"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="figure_common.pas"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="figure_pixel.pas"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="figure_point.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="45" Y="9"/>
+        <UsageCount Value="10"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="figure_test.pas"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="figures.pas"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="point.pas"/>
+        <UnitName Value="figure_point"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit8>
     </Units>
+    <General>
+      <ActiveWindowIndexAtStart Value="-1"/>
+    </General>
     <JumpHistory HistoryIndex="-1"/>
     <RunParams>
       <FormatVersion Value="2"/>

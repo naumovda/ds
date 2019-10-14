@@ -9,10 +9,10 @@
         <Filename Value="students_03.lpr"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="60"/>
-        <CursorPos X="13" Y="69"/>
-        <UsageCount Value="20"/>
+        <TopLine Value="76"/>
+        <CursorPos Y="125"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="comment.pas"/>
@@ -20,13 +20,23 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="6"/>
         <CursorPos X="2" Y="25"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="21"/>
       </Unit1>
     </Units>
-    <General>
-      <ActiveWindowIndexAtStart Value="-1"/>
-    </General>
-    <JumpHistory HistoryIndex="-1"/>
+    <JumpHistory Count="3" HistoryIndex="2">
+      <Position1>
+        <Filename Value="students_03.lpr"/>
+        <Caret Line="103" Column="72" TopLine="76"/>
+      </Position1>
+      <Position2>
+        <Filename Value="students_03.lpr"/>
+        <Caret Line="93" Column="36" TopLine="76"/>
+      </Position2>
+      <Position3>
+        <Filename Value="students_03.lpr"/>
+        <Caret Line="92" TopLine="66"/>
+      </Position3>
+    </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
       <Modes Count="0" ActiveMode=""/>

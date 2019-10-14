@@ -7,7 +7,6 @@ type
   TDate = record Day, Month, Year: integer; end;
 
   //сведения о студенте
-  PStudent = ^TStudent;
   TStudent = class
   public
     Name,                     //имя
@@ -33,7 +32,7 @@ type
       AThese: string;
       ASpecCode: string);
 
-    procedure Print(s: string);
+    procedure Print();
   end;
 
 procedure TStudent.SetBioData(AName, ASurname: string; ADay, AMonth,
@@ -64,10 +63,10 @@ begin
   SpecCode := ASpecCode;
 end;
 
-procedure TGraduateStudent.Print(s: string);
+procedure TGraduateStudent.Print();
 begin
-  //inherited Print();
-  Print();
+  inherited Print();
+  //Print();
 
   writeln('From TGraduateStudent.Print => These: ', These);
 end;
@@ -88,18 +87,16 @@ begin
   PrintBirthDay(gs);
 end;
 
-procedure CallPrint(ps: PStudent);
+procedure CallPrint(s: TStudent);
 begin
-  ps^.Print;
+   TGraduateStudent(s).Print();
 end;
 
 var
   s: TStudent;
   gs1, gs2: TGraduateStudent;
 
-  ps: ^TStudent;
-
-  parr: array[1..3] of ^TStudent;
+  parr: array[1..3] of TStudent;
   i: integer;
 
 begin
@@ -114,17 +111,11 @@ begin
   gs2.SetBioData('Alex', 'Ivanov', 3, 3, 1982,
     'Image classification', '09.04.02');
 
-  s.Print;      //вызывается процедура TStudent.Print
-  gs1.Print('');    //вызывается процедура TGraduateStudent.Print
-
-  ps := @gs1;
-  ps^.Print();  //вызывается процедура TStudent.Print
-
   writeln;
 
-  parr[1] := @s;
-  parr[2] := @gs1;
-  parr[3] := @gs2;
+  parr[1] := s;
+  parr[2] := gs1;
+  parr[3] := gs2;
 
   for i := 1 to 3 do
     CallPrint(parr[i]); //вызывается процедура TStudent.Print
