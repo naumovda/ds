@@ -3,164 +3,51 @@
   <ProjectSession>
     <Version Value="11"/>
     <BuildModes Active="Default"/>
-    <Units Count="4">
+    <Units Count="5">
       <Unit0>
         <Filename Value="orders.lpr"/>
         <IsPartOfProject Value="True"/>
-        <CursorPos X="74" Y="22"/>
-        <UsageCount Value="24"/>
-        <Loaded Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="6"/>
+        <CursorPos X="10" Y="33"/>
+        <UsageCount Value="30"/>
       </Unit0>
       <Unit1>
         <Filename Value="order_units.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="103"/>
-        <CursorPos Y="120"/>
-        <UsageCount Value="24"/>
-        <Loaded Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="25"/>
+        <CursorPos X="86" Y="37"/>
+        <UsageCount Value="30"/>
       </Unit1>
       <Unit2>
         <Filename Value="order_common.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="3"/>
-        <CursorPos X="67" Y="12"/>
-        <UsageCount Value="24"/>
-        <Loaded Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="28" Y="10"/>
+        <UsageCount Value="30"/>
       </Unit2>
       <Unit3>
         <Filename Value="order_products.pas"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="210"/>
-        <CursorPos Y="256"/>
-        <UsageCount Value="22"/>
-        <Loaded Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="31"/>
+        <CursorPos X="50" Y="60"/>
+        <UsageCount Value="28"/>
       </Unit3>
+      <Unit4>
+        <Filename Value="order_document.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="10" Y="26"/>
+        <UsageCount Value="26"/>
+      </Unit4>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
-      <Position1>
-        <Filename Value="order_units.pas"/>
-        <Caret Line="145" TopLine="133"/>
-      </Position1>
-      <Position2>
-        <Filename Value="order_units.pas"/>
-        <Caret Line="147" TopLine="133"/>
-      </Position2>
-      <Position3>
-        <Filename Value="order_units.pas"/>
-        <Caret Line="143" TopLine="133"/>
-      </Position3>
-      <Position4>
-        <Filename Value="order_units.pas"/>
-        <Caret Line="145" TopLine="133"/>
-      </Position4>
-      <Position5>
-        <Filename Value="order_units.pas"/>
-        <Caret Line="147" TopLine="133"/>
-      </Position5>
-      <Position6>
-        <Filename Value="order_units.pas"/>
-        <Caret Line="143" TopLine="133"/>
-      </Position6>
-      <Position7>
-        <Filename Value="order_units.pas"/>
-        <Caret Line="150" TopLine="134"/>
-      </Position7>
-      <Position8>
-        <Filename Value="order_units.pas"/>
-        <Caret Line="151" TopLine="135"/>
-      </Position8>
-      <Position9>
-        <Filename Value="orders.lpr"/>
-        <Caret Line="20" TopLine="7"/>
-      </Position9>
-      <Position10>
-        <Filename Value="orders.lpr"/>
-        <Caret Line="21" TopLine="7"/>
-      </Position10>
-      <Position11>
-        <Filename Value="orders.lpr"/>
-        <Caret Line="23" TopLine="7"/>
-      </Position11>
-      <Position12>
-        <Filename Value="orders.lpr"/>
-        <Caret Line="24" TopLine="8"/>
-      </Position12>
-      <Position13>
-        <Filename Value="order_units.pas"/>
-        <Caret Line="168" TopLine="158"/>
-      </Position13>
-      <Position14>
-        <Filename Value="order_units.pas"/>
-        <Caret Line="207" TopLine="197"/>
-      </Position14>
-      <Position15>
-        <Filename Value="order_units.pas"/>
-        <Caret Line="209" TopLine="197"/>
-      </Position15>
-      <Position16>
-        <Filename Value="order_units.pas"/>
-        <Caret Line="210" TopLine="200"/>
-      </Position16>
-      <Position17>
-        <Filename Value="order_units.pas"/>
-        <Caret Line="212" TopLine="200"/>
-      </Position17>
-      <Position18>
-        <Filename Value="order_units.pas"/>
-        <Caret Line="213" TopLine="200"/>
-      </Position18>
-      <Position19>
-        <Filename Value="order_units.pas"/>
-        <Caret Line="217" TopLine="201"/>
-      </Position19>
-      <Position20>
-        <Filename Value="order_units.pas"/>
-        <Caret Line="173" TopLine="163"/>
-      </Position20>
-      <Position21>
-        <Filename Value="orders.lpr"/>
-        <Caret Line="26" TopLine="10"/>
-      </Position21>
-      <Position22>
-        <Filename Value="orders.lpr"/>
-        <Caret Line="27" TopLine="11"/>
-      </Position22>
-      <Position23>
-        <Filename Value="order_units.pas"/>
-        <Caret Line="173" TopLine="163"/>
-      </Position23>
-      <Position24>
-        <Filename Value="order_products.pas"/>
-        <Caret Line="250" TopLine="231"/>
-      </Position24>
-      <Position25>
-        <Filename Value="orders.lpr"/>
-        <Caret Line="6" Column="3"/>
-      </Position25>
-      <Position26>
-        <Filename Value="order_products.pas"/>
-        <Caret Line="7" Column="15"/>
-      </Position26>
-      <Position27>
-        <Filename Value="order_products.pas"/>
-        <Caret Line="1613" TopLine="1583"/>
-      </Position27>
-      <Position28>
-        <Filename Value="order_units.pas"/>
-        <Caret Line="120" TopLine="103"/>
-      </Position28>
-      <Position29>
-        <Filename Value="orders.lpr"/>
-        <Caret Line="22" Column="74"/>
-      </Position29>
-      <Position30>
-        <Filename Value="order_products.pas"/>
-        <Caret Line="265" Column="40" TopLine="74"/>
-      </Position30>
-    </JumpHistory>
+    <General>
+      <ActiveWindowIndexAtStart Value="-1"/>
+    </General>
+    <JumpHistory HistoryIndex="-1"/>
     <RunParams>
       <FormatVersion Value="2"/>
       <Modes Count="0" ActiveMode=""/>
