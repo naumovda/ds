@@ -1,5 +1,6 @@
 program ex08_01;
 
+//значения ошибок
 const
   READ_OK = 0;
   ERROR_UNEXP_EOF = 1;
