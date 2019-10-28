@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="11"/>
+    <BuildModes Active="Default"/>
+    <Units Count="1">
+      <Unit0>
+        <Filename Value="ex08_06.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="44"/>
+        <CursorPos X="51" Y="61"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+    </Units>
+    <JumpHistory Count="25" HistoryIndex="24">
+      <Position1>
+        <Filename Value="ex08_06.lpr"/>
+        <Caret Line="4" Column="43"/>
+      </Position1>
+      <Position2>
+        <Filename Value="ex08_06.lpr"/>
+        <Caret Line="38" Column="15" TopLine="16"/>
+      </Position2>
+      <Position3>
+        <Filename Value="ex08_06.lpr"/>
+        <Caret Line="65" Column="18" TopLine="19"/>
+      </Position3>
+      <Position4>
+        <Filename Value="ex08_06.lpr"/>
+        <Caret Line="15"/>
+      </Position4>
+      <Position5>
+        <Filename Value="ex08_06.lpr"/>
+        <Caret Line="13" Column="15"/>
+      </Position5>
+      <Position6>
+        <Filename Value="ex08_06.lpr"/>
+        <Caret Line="26" Column="21" TopLine="11"/>
+      </Position6>
+      <Position7>
+        <Filename Value="ex08_06.lpr"/>
+        <Caret Line="24"/>
+      </Position7>
+      <Position8>
+        <Filename Value="ex08_06.lpr"/>
+        <Caret Line="93" Column="11" TopLine="65"/>
+      </Position8>
+      <Position9>
+        <Filename Value="ex08_06.lpr"/>
+        <Caret Line="79" TopLine="65"/>
+      </Position9>
+      <Position10>
+        <Filename Value="ex08_06.lpr"/>
+        <Caret Line="37" TopLine="22"/>
+      </Position10>
+      <Position11>
+        <Filename Value="ex08_06.lpr"/>
+        <Caret Line="66" TopLine="46"/>
+      </Position11>
+      <Position12>
+        <Filename Value="ex08_06.lpr"/>
+        <Caret Line="39" TopLine="23"/>
+      </Position12>
+      <Position13>
+        <Filename Value="ex08_06.lpr"/>
+        <Caret Line="43" TopLine="26"/>
+      </Position13>
+      <Position14>
+        <Filename Value="ex08_06.lpr"/>
+        <Caret Line="44" TopLine="26"/>
+      </Position14>
+      <Position15>
+        <Filename Value="ex08_06.lpr"/>
+        <Caret Line="46" TopLine="26"/>
+      </Position15>
+      <Position16>
+        <Filename Value="ex08_06.lpr"/>
+        <Caret Line="50" TopLine="39"/>
+      </Position16>
+      <Position17>
+        <Filename Value="ex08_06.lpr"/>
+        <Caret Line="52" TopLine="39"/>
+      </Position17>
+      <Position18>
+        <Filename Value="ex08_06.lpr"/>
+        <Caret Line="53" TopLine="39"/>
+      </Position18>
+      <Position19>
+        <Filename Value="ex08_06.lpr"/>
+        <Caret Line="55" TopLine="39"/>
+      </Position19>
+      <Position20>
+        <Filename Value="ex08_06.lpr"/>
+        <Caret Line="62" TopLine="42"/>
+      </Position20>
+      <Position21>
+        <Filename Value="ex08_06.lpr"/>
+        <Caret Line="61" TopLine="42"/>
+      </Position21>
+      <Position22>
+        <Filename Value="ex08_06.lpr"/>
+        <Caret Line="66" TopLine="42"/>
+      </Position22>
+      <Position23>
+        <Filename Value="ex08_06.lpr"/>
+        <Caret Line="79" TopLine="63"/>
+      </Position23>
+      <Position24>
+        <Filename Value="ex08_06.lpr"/>
+        <Caret Line="85" TopLine="63"/>
+      </Position24>
+      <Position25>
+        <Filename Value="ex08_06.lpr"/>
+        <Caret Line="90" TopLine="65"/>
+      </Position25>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

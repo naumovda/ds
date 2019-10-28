@@ -6,11 +6,11 @@
     <BuildModes Active="Default"/>
     <Units Count="1">
       <Unit0>
-        <Filename Value="ex08_03.lpr"/>
+        <Filename Value="ex08_07.lpr"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="16"/>
+        <CursorPos X="70" Y="50"/>
         <UsageCount Value="20"/>
       </Unit0>
     </Units>
