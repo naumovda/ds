@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="11"/>
+    <BuildModes Active="Default"/>
+    <Units Count="3">
+      <Unit0>
+        <Filename Value="XmlTest.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <CursorPos X="45" Y="14"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="ex01.xml"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="12" Y="6"/>
+        <UsageCount Value="20"/>
+        <DefaultSyntaxHighlighter Value="XML"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="C:\lazarus\components\lazutils\laz2_xmlread.pas"/>
+        <UnitName Value="laz2_XMLRead"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="1503"/>
+        <CursorPos X="77" Y="1518"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit2>
+    </Units>
+    <JumpHistory Count="8" HistoryIndex="7">
+      <Position1>
+        <Filename Value="XmlTest.lpr"/>
+        <Caret Line="25" Column="98"/>
+      </Position1>
+      <Position2>
+        <Filename Value="XmlTest.lpr"/>
+        <Caret Line="8" Column="3"/>
+      </Position2>
+      <Position3>
+        <Filename Value="XmlTest.lpr"/>
+        <Caret Line="14" Column="44"/>
+      </Position3>
+      <Position4>
+        <Filename Value="XmlTest.lpr"/>
+        <Caret Line="15" Column="61"/>
+      </Position4>
+      <Position5>
+        <Filename Value="XmlTest.lpr"/>
+        <Caret Line="22" Column="73"/>
+      </Position5>
+      <Position6>
+        <Filename Value="XmlTest.lpr"/>
+        <Caret Line="7" Column="3"/>
+      </Position6>
+      <Position7>
+        <Filename Value="XmlTest.lpr"/>
+        <Caret Line="13" Column="55"/>
+      </Position7>
+      <Position8>
+        <Filename Value="XmlTest.lpr"/>
+        <Caret Line="14" Column="45"/>
+      </Position8>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>
