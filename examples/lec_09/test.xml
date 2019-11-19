@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<register>
+  <user id="001">
+    <name gender="M">Fernando</name>
+    <age year="1976">32</age>
+  </user>
+</register>

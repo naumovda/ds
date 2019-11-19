@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<request>
+  <request_type>PUT_FILE</request_type>
+  <username>123</username>
+  <password>abc</password>
+  <item name="student" password="sa"/>
+</request>

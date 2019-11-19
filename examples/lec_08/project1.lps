@@ -4,16 +4,22 @@
     <PathDelim Value="\"/>
     <Version Value="11"/>
     <BuildModes Active="Default"/>
-    <Units Count="1">
+    <Units Count="2">
       <Unit0>
-        <Filename Value="ex08_05.lpr"/>
+        <Filename Value="project1.lpr"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="8"/>
-        <CursorPos Y="23"/>
+        <CursorPos X="36" Y="13"/>
         <UsageCount Value="20"/>
       </Unit0>
+      <Unit1>
+        <Filename Value="C:\lazarus\fpc\3.0.4\source\packages\fcl-stl\src\gset.pp"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="504"/>
+        <CursorPos X="70" Y="234"/>
+        <UsageCount Value="10"/>
+      </Unit1>
     </Units>
     <General>
       <ActiveWindowIndexAtStart Value="-1"/>

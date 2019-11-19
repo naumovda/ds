@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<images directory="mydir">
+  <imageNode URL="graphic.jpg" title="">
+    <Peca DestinoX="0" DestinoY="0">Pecacastelo.jpg1.swf</Peca>
+    <Peca DestinoX="0" DestinoY="86">Pecacastelo.jpg2.swf</Peca>
+  </imageNode>
+</images>

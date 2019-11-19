@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="11"/>
+    <BuildModes Active="Default"/>
+    <Units Count="1">
+      <Unit0>
+        <Filename Value="XmlTest04.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <CursorPos X="18" Y="25"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+    </Units>
+    <JumpHistory Count="5" HistoryIndex="4">
+      <Position1>
+        <Filename Value="XmlTest04.lpr"/>
+        <Caret Line="9" Column="3"/>
+      </Position1>
+      <Position2>
+        <Filename Value="XmlTest04.lpr"/>
+        <Caret Line="35" Column="5"/>
+      </Position2>
+      <Position3>
+        <Filename Value="XmlTest04.lpr"/>
+        <Caret Line="8" Column="11"/>
+      </Position3>
+      <Position4>
+        <Filename Value="XmlTest04.lpr"/>
+        <Caret Line="16" Column="3"/>
+      </Position4>
+      <Position5>
+        <Filename Value="XmlTest04.lpr"/>
+        <Caret Line="22" Column="18"/>
+      </Position5>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

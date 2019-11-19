@@ -20,6 +20,13 @@ var
 
  begin
   // Читаем xml файл с жесткого диска
+  //<?xml version="1.0"?>
+  //<request>
+  //  <request_type>PUT_FILE</request_type>
+  //  <username>123</username>
+  //  <password>abc</password>
+  //</request>
+  
   ReadXMLFile(Doc, 'ex01.xml');
 
   // Запрашиваем узел с именем "password"

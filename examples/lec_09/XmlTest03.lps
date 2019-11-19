@@ -6,18 +6,15 @@
     <BuildModes Active="Default"/>
     <Units Count="1">
       <Unit0>
-        <Filename Value="ex08_05.lpr"/>
+        <Filename Value="XmlTest03.lpr"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="8"/>
-        <CursorPos Y="23"/>
+        <TopLine Value="32"/>
+        <CursorPos X="5" Y="39"/>
         <UsageCount Value="20"/>
+        <Loaded Value="True"/>
       </Unit0>
     </Units>
-    <General>
-      <ActiveWindowIndexAtStart Value="-1"/>
-    </General>
     <JumpHistory HistoryIndex="-1"/>
     <RunParams>
       <FormatVersion Value="2"/>
