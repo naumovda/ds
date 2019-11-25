@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+  <units>
+    <unit>
+      <id>1</id>
+      <code>166</code>
+      <name>штук</name>
+      <shortname>шт</shortname>
+    </unit>
+  </units>
+</data>
