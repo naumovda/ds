@@ -1,0 +1,87 @@
+\documentclass{beamer}
+\mode<presentation>
+\usetheme{CambridgeUS}
+\usepackage[russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage{sansmathaccent}
+
+\usepackage{verbatim}
+\usepackage{alltt}
+
+\pdfmapfile{+sansmathaccent.map}
+\title[Software Design]{Паттерн Одиночка}
+\author{Наумов Д.А., доц. каф. КТ}
+\date[03.12.2019] {Основы программной инженерии, 2019}
+
+\begin{document}
+
+\begin{frame}[fragile]
+\begin{alltt}
+type
+  MyClass = class
+  end;
+var
+  MyObject: MyClass;
+begin
+  MyObject := MyClass.Create;
+end.
+\end{alltt}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{alltt}
+type
+  MyClass = class
+    private
+      constructor Create;
+  end;
+\end{alltt}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{alltt}
+type
+  MyClass = class
+    public
+      class function GetInstance(): MyClass;
+  end;
+
+class function MyClass.GetInstance(): MyClass;
+begin
+end;
+\end{alltt}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{alltt}
+class function MyClass.GetInstance(): MyClass;
+begin
+  Result := MyClass.Create;
+end;
+\end{alltt}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{alltt}
+type
+  Singleton = class
+    private
+      UniqueInstance: Singleton; static;
+      constructor Create;
+    public
+      class function GetInstance(): Singleton;
+  end;
+constructor Singleton.Create;
+begin
+end;
+class function Singleton.GetInstance(): Singleton;
+begin
+  if UniqueInstance = nil then
+    UniqueInstance := Singleton.Create;
+  Result := Singleton.Create;
+end; 
+\end{alltt}
+\end{frame}
+
+\end{document}
