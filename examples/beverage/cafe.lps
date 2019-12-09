@@ -9,86 +9,16 @@
         <Filename Value="cafe.lpr"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="7"/>
         <CursorPos X="59" Y="24"/>
         <UsageCount Value="20"/>
-        <Loaded Value="True"/>
       </Unit0>
     </Units>
-    <JumpHistory Count="18" HistoryIndex="17">
-      <Position1>
-        <Filename Value="cafe.lpr"/>
-        <Caret Line="28" TopLine="15"/>
-      </Position1>
-      <Position2>
-        <Filename Value="cafe.lpr"/>
-        <Caret Line="87" Column="12" TopLine="61"/>
-      </Position2>
-      <Position3>
-        <Filename Value="cafe.lpr"/>
-        <Caret Line="7" Column="6"/>
-      </Position3>
-      <Position4>
-        <Filename Value="cafe.lpr"/>
-        <Caret Line="133" Column="63" TopLine="103"/>
-      </Position4>
-      <Position5>
-        <Filename Value="cafe.lpr"/>
-        <Caret Line="51" Column="13" TopLine="34"/>
-      </Position5>
-      <Position6>
-        <Filename Value="cafe.lpr"/>
-        <Caret Line="91" Column="29" TopLine="74"/>
-      </Position6>
-      <Position7>
-        <Filename Value="cafe.lpr"/>
-        <Caret Line="98" Column="17" TopLine="81"/>
-      </Position7>
-      <Position8>
-        <Filename Value="cafe.lpr"/>
-        <Caret Line="108" Column="28" TopLine="89"/>
-      </Position8>
-      <Position9>
-        <Filename Value="cafe.lpr"/>
-        <Caret Line="113" Column="17" TopLine="96"/>
-      </Position9>
-      <Position10>
-        <Filename Value="cafe.lpr"/>
-        <Caret Line="133" Column="56" TopLine="105"/>
-      </Position10>
-      <Position11>
-        <Filename Value="cafe.lpr"/>
-        <Caret Line="127" Column="45" TopLine="105"/>
-      </Position11>
-      <Position12>
-        <Filename Value="cafe.lpr"/>
-        <Caret Line="7" Column="12"/>
-      </Position12>
-      <Position13>
-        <Filename Value="cafe.lpr"/>
-        <Caret Line="131" Column="32" TopLine="108"/>
-      </Position13>
-      <Position14>
-        <Filename Value="cafe.lpr"/>
-        <Caret Line="24" Column="49" TopLine="4"/>
-      </Position14>
-      <Position15>
-        <Filename Value="cafe.lpr"/>
-        <Caret Line="132" Column="3" TopLine="108"/>
-      </Position15>
-      <Position16>
-        <Filename Value="cafe.lpr"/>
-        <Caret Line="24" Column="49" TopLine="7"/>
-      </Position16>
-      <Position17>
-        <Filename Value="cafe.lpr"/>
-        <Caret Line="130" Column="81" TopLine="108"/>
-      </Position17>
-      <Position18>
-        <Filename Value="cafe.lpr"/>
-        <Caret Line="135" Column="9" TopLine="108"/>
-      </Position18>
-    </JumpHistory>
+    <General>
+      <ActiveWindowIndexAtStart Value="-1"/>
+    </General>
+    <JumpHistory HistoryIndex="-1"/>
     <RunParams>
       <FormatVersion Value="2"/>
       <Modes Count="0" ActiveMode=""/>
