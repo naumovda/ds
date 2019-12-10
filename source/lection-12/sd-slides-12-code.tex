@@ -10,7 +10,7 @@
 \usepackage{alltt}
 
 \pdfmapfile{+sansmathaccent.map}
-\title[Software Design]{Паттерн Одиночка}
+\title[Software Design]{Паттерн Шаблонный метод}
 \author{Наумов Д.А., доц. каф. КТ}
 \date[03.12.2019] {Основы программной инженерии, 2019}
 
@@ -19,45 +19,162 @@
 \begin{frame}[fragile]
 \begin{alltt}
 type
-  MyClass = class
+  Coffee = class
+    public
+      procedure prepareRecipe();
+
+      procedure boilWater();
+      procedure brewCoffeeGrinds();
+      procedure pourInCup();
+      procedure addSugarAndMilk();
   end;
+
+procedure Coffee.prepareRecipe();
+begin
+  boilWater();
+  brewCoffeeGrinds();
+  pourInCup();
+  addSugarAndMilk();
+end;
+\end{alltt}
+\end{frame}
+\begin{frame}[fragile]
+\begin{alltt}
+procedure Coffee.boilWater();
+begin
+  writeln('Boiling Water');
+end;
+procedure Coffee.brewCoffeeGrinds();
+begin
+  writeln('Dripping Coffee throught filter');
+end;
+procedure Coffee.pourInCup();
+begin
+  writeln('Pouring into cup');
+end;
+procedure Coffee.addSugarAndMilk();
+begin
+  writeln('Adding sugar and milk');
+end;
+\end{alltt}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{alltt}
+type
+  Tea = class
+    public
+      procedure prepareRecipe();
+
+      procedure boilWater();
+      procedure steepTeaBag();
+      procedure pourInCup();
+      procedure addLemon();
+  end;
+\end{alltt}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{alltt}
+procedure Tea.prepareRecipe();
+begin
+  boilWater();
+  steepTeaBag();
+  pourInCup();
+  addLemon();
+end;
+\end{alltt}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{alltt}
+procedure Tea.boilWater();
+begin
+  writeln('Boiling Water');
+end;
+procedure Tea.steepTeaBag();
+begin
+  writeln('Steeping Tea bag into cup');
+end;
+procedure Tea.pourInCup();
+begin
+  writeln('Pouring into cup');
+end;
+procedure Tea.addLemon();
+begin
+  writeln('Adding a lemon');
+end;
+\end{alltt}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{alltt}
+type
+  CaffeineBeverage = class
+  public
+    procedure prepareRecipe();
+	
+    procedure brew(); virtual; abstract;
+    procedure addCondiments(); virtual; abstract;
+    procedure boilWater(); //реализация
+    procedure pourInCup(); //реализация    
+  end;
+procedure CaffeineBeverage.prepareRecipe();
+begin
+  boilWater();
+  brew();
+  pourInCup();
+  addCondiments	();
+end;
+\end{alltt}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{alltt}
+procedure CaffeineBeverage.boilWater();
+begin
+  writeln('Boiling Water');
+end;
+procedure CaffeineBeverage.pourInCup();
+begin
+  writeln('Pouring into cup');
+end;
+\end{alltt}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{alltt}
 var
-  MyObject: MyClass;
-begin
-  MyObject := MyClass.Create;
-end.
+  myTea: Tea;
+
+myTea.prepareRecipe();
+
+boilWater();
+
+brew();  
+
+pourInCup();
+
+addCondiments();
 \end{alltt}
 \end{frame}
 
 \begin{frame}[fragile]
 \begin{alltt}
 type
-  MyClass = class
-    private
-      constructor Create;
+  AbstractClass = class
+  public
+    procedure templateMethod();
+	
+    procedure primitiveMethod1(); virtual; abstract;
+    procedure primitiveMethod2(); virtual; abstract;
+    procedure concreteOperation(); 
   end;
-\end{alltt}
-\end{frame}
-
-\begin{frame}[fragile]
-\begin{alltt}
-type
-  MyClass = class
-    public
-      class function GetInstance(): MyClass;
-  end;
-
-class function MyClass.GetInstance(): MyClass;
+procedure AbstractClass.templateMethod();
 begin
-end;
-\end{alltt}
-\end{frame}
-
-\begin{frame}[fragile]
-\begin{alltt}
-class function MyClass.GetInstance(): MyClass;
-begin
-  Result := MyClass.Create;
+  primitiveMethod1();
+  primitiveMethod2();
+  concreteOperation();
 end;
 \end{alltt}
 \end{frame}
@@ -65,23 +182,83 @@ end;
 \begin{frame}[fragile]
 \begin{alltt}
 type
-  Singleton = class
-    private
-      UniqueInstance: Singleton; static;
-      constructor Create;
-    public
-      class function GetInstance(): Singleton;
+  AbstractClass = class
+  public
+    procedure templateMethod();
+	
+    procedure primitiveMethod1(); virtual; abstract;
+    procedure primitiveMethod2(); virtual; abstract;
+    procedure concreteOperation(); 
+    procedure hook();     
   end;
-constructor Singleton.Create;
+procedure AbstractClass.templateMethod();
 begin
+  primitiveMethod1();
+  primitiveMethod2();
+  concreteOperation();
+  hook();
 end;
-class function Singleton.GetInstance(): Singleton;
-begin
-  if UniqueInstance = nil then
-    UniqueInstance := Singleton.Create;
-  Result := Singleton.Create;
-end; 
 \end{alltt}
 \end{frame}
+
+\begin{frame}[fragile]
+\begin{alltt}
+procedure AbstractClass.hook();
+begin
+  //пустой метод
+end;
+procedure concreteOperation(); 
+begin
+  //какая-то реализация
+end;
+\end{alltt}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{alltt}
+type
+  CaffeineBeverage = class
+    procedure prepareRecipe();
+    ...
+    procedure addCondiments(); virtual; abstract;
+    function customerWantsCondiments(): boolean;
+  end;
+procedure CaffeineBeverage.prepareRecipe();
+begin
+  boilWater();
+  brew();
+  pourInCup();
+  if customerWantsCondiments then addCondiments();
+end;
+function CaffeineBeverage.customerWantsCondiments(): boolean;
+begin
+  Result := true;
+end;
+\end{alltt}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{alltt}
+type
+  CaffeineWithHook = class(CaffeineBeverage)
+	...
+    procedure addCondiments(); 
+    function customerWantsCondiments(): boolean; override;
+  end;
+function CaffeineBeverage.customerWantsCondiments(): boolean;
+var
+  answer: string;
+begin
+  writeln('Would you like sugar and milk (y/n)?');  
+  readln(answer);
+  Result := (answer='y');
+end;
+procedure CaffeineWithHook.addCondiments(); 
+begin
+  writeln('Adding Sigar and Milk.');
+end;
+\end{alltt}
+\end{frame}
+
 
 \end{document}
