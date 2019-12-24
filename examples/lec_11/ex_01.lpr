@@ -1,29 +1,35 @@
 program ex_01;
 
-type
-  Singleton = class
-    private
-      UniqueInstance: Singleton; static;
-      constructor Create;
-    public
-      class function GetInstance(): Singleton;
-  end;
+{$mode objfpc}{$H+}
 
-constructor Singleton.Create;
-begin
-end;
-
-class function Singleton.GetInstance(): Singleton;
-begin
-  if UniqueInstance = nil then
-    UniqueInstance := Singleton.Create;
-  Result := Singleton.Create;
-end;
+uses
+  {$IFDEF UNIX}
+  {$IFDEF UseCThreads}
+  cthreads,
+  {$ENDIF}
+  {$ENDIF}
+  Classes,
+  Singleton3;
 
 var
-  MyObject: Singleton;
+  s1, s2: TSingleton;
 
 begin
-  MyObject := Singleton.GetInstance();
+  s1:= TSingleton.Create;
+
+  s1.name := 'one';
+  writeln('name of s1: '+s1.name);
+
+  s2:= TSingleton.Create;
+
+  s2.name := 'two';
+
+  writeln('name of s1: '+s1.name);
+  writeln('name of s2: '+s2.name);
+
+  //writeln('name of singleton: ' + Singleton.name);
+
+  writeln('Press Enter');
+  readln;
 end.
 

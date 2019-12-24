@@ -26,11 +26,41 @@
       <FormatVersion Value="2"/>
       <Modes Count="0"/>
     </RunParams>
-    <Units Count="1">
+    <Units Count="7">
       <Unit0>
         <Filename Value="ex_01.lpr"/>
         <IsPartOfProject Value="True"/>
       </Unit0>
+      <Unit1>
+        <Filename Value="singletonunit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="SingletonUnit"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="singleton3.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Singleton3"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="singleton2.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Singleton2"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="singleton1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Singleton1"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="globalfunctionsingleton.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="GlobalFunctionSingleton"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="globalvariablesingleton.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="GlobalVariableSingleton"/>
+      </Unit6>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
