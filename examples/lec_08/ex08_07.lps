@@ -10,7 +10,8 @@
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="70" Y="50"/>
+        <TopLine Value="6"/>
+        <CursorPos X="22" Y="53"/>
         <UsageCount Value="20"/>
       </Unit0>
     </Units>
