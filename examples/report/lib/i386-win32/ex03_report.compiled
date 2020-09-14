@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="C:\FPC\3.0.4\bin\i386-Win32\fpc.exe" Date="1262918680"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -l -vewnhibq -FuC:\lazarus\components\lazutils\lib\i386-win32 -FuC:\lazarus\packager\units\i386-win32 -FuC:\WORK\git\ds\examples\report\ -FUC:\WORK\git\ds\examples\report\lib\i386-win32\ -FEC:\WORK\git\ds\examples\report\ -oC:\WORK\git\ds\examples\report\ex03_report.exe ex03_report.lpr"/>
+</CONFIG>

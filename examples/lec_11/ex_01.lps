@@ -4,92 +4,79 @@
     <PathDelim Value="\"/>
     <Version Value="11"/>
     <BuildModes Active="Default"/>
-    <Units Count="7">
+    <Units Count="8">
       <Unit0>
         <Filename Value="ex_01.lpr"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="10"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="8"/>
         <CursorPos X="23" Y="21"/>
         <UsageCount Value="21"/>
-        <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="singletonunit.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="SingletonUnit"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="7"/>
         <CursorPos X="21" Y="16"/>
         <UsageCount Value="21"/>
-        <Loaded Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="singleton3.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Singleton3"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="9"/>
         <CursorPos X="22" Y="5"/>
         <UsageCount Value="20"/>
-        <Loaded Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="singleton2.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Singleton2"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="-1"/>
         <CursorPos X="6" Y="35"/>
         <UsageCount Value="20"/>
-        <Loaded Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="singleton1.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Singleton1"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="-1"/>
         <CursorPos X="45" Y="15"/>
         <UsageCount Value="20"/>
-        <Loaded Value="True"/>
       </Unit4>
       <Unit5>
         <Filename Value="globalfunctionsingleton.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="GlobalFunctionSingleton"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="11"/>
         <CursorPos X="6" Y="38"/>
         <UsageCount Value="20"/>
-        <Loaded Value="True"/>
       </Unit5>
       <Unit6>
         <Filename Value="globalvariablesingleton.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="GlobalVariableSingleton"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="-1"/>
         <CursorPos X="6" Y="22"/>
         <UsageCount Value="20"/>
-        <Loaded Value="True"/>
       </Unit6>
+      <Unit7>
+        <Filename Value="..\report\ex03_report.lpr"/>
+        <UnitName Value="reports"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="53" Y="9"/>
+        <UsageCount Value="10"/>
+      </Unit7>
     </Units>
-    <JumpHistory Count="4" HistoryIndex="3">
-      <Position1>
-        <Filename Value="ex_01.lpr"/>
-        <Caret Line="3" Column="6"/>
-      </Position1>
-      <Position2>
-        <Filename Value="ex_01.lpr"/>
-        <Caret Line="11" Column="10"/>
-      </Position2>
-      <Position3>
-        <Filename Value="ex_01.lpr"/>
-        <Caret Line="6" Column="26"/>
-      </Position3>
-      <Position4>
-        <Filename Value="ex_01.lpr"/>
-        <Caret Line="4" Column="5"/>
-      </Position4>
-    </JumpHistory>
+    <General>
+      <ActiveWindowIndexAtStart Value="-1"/>
+    </General>
+    <JumpHistory HistoryIndex="-1"/>
     <RunParams>
       <FormatVersion Value="2"/>
       <Modes Count="0" ActiveMode=""/>
