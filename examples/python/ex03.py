@@ -7,17 +7,17 @@ class Lamp:
     def __init__(self, color="White"):
         print('New lamp is created')
         self.State = False  
-        self.__color = color 
+        self._color = color 
         
     @property
     def color(self):
-        return self.__color
+        return self._color
     
     @color.setter
     def color(self, value):
         if value == "Black":
             raise Exception
-        self.__color = value      
+        self._color = value      
 
     def TurnOn(self):
         self.State = True        
@@ -67,7 +67,7 @@ print(dir(lamp1))
 # lamp1.TurnOn()
 # print(fun)
 Lamp.TurnOn(lamp1)
-print(lamp1._Lamp__color)
+# print(lamp1._Lamp__color)
 
 # lamp1.TurnOn()
 
@@ -79,3 +79,4 @@ print(lamp1._Lamp__color)
 # lamp1.TurnOff()
 
 # print(dir(lamp1))
+

@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CONFIG>
-  <Compiler Value="C:\FPC\3.0.4\bin\i386-Win32\fpc.exe" Date="1262918680"/>
-  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -l -vewnhibq -FiC:\WORK\git\ds\examples\lec_11\lib\i386-win32 -FuC:\WORK\git\ds\examples\lec_11\ -FUC:\WORK\git\ds\examples\lec_11\lib\i386-win32\ -FEC:\WORK\git\ds\examples\lec_11\ -oC:\WORK\git\ds\examples\lec_11\ex_01.exe ex_01.lpr"/>
-</CONFIG>
