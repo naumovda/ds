@@ -684,4 +684,132 @@ end;
 	\end{figure}
 \end{frame}
 
+\begin{frame}{Обработка ошибок в Python}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.7]{images/lec08-pic01-python.png}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Иерархия исключений в Python}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.7]{images/lec08-pic02-python.png}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{try...except}
+	В программе возможных два вида исключений -- ValueError, возникающее в случае, если на запрос программы <<введите число>>, вы
+введете строку, и ZeroDivisionError - если вы введете в качестве числа 0.
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.7]{images/lec08-pic04-python.png}
+	\end{figure}
+	Если ввести 0 на запрос приведенной выше программы, произойдет ее
+остановка с распечаткой сообщения об исключении:	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.7]{images/lec08-pic05-python.png}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{try...except}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.7]{images/lec08-pic03-python.png}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{try...except}
+	Согласно документу по языку Python, описывающему ошибки и исключения, оператор try работает следующим образом:
+	\begin{itemize}
+		\item Вначале выполняется код, находящийся между операторами try и except.
+		\item Если в ходе его выполнения исключения не произошло, то код в блоке except пропускается, а код в блоке try выполняется весь до конца.
+		\item Если исключение происходит, то выполнение в рамках блока try прерывается и выполняется код в блоке except. При этом для оператора except можно указать, какие исключения можно обрабатывать в нем. При возникновении исключения, ищется именно тот блок except, который может обработать данное исключение.
+		\item Если среди except блоков нет подходящего для обработки исключения, то оно передается наружу из блока try. В случае, если обработчик исключения так и не будет найден, то исключение будет необработанным (unhandled exception) и программа аварийно остановится.	
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{try...except}
+	Для указания набора исключений, который должен обрабатывать данный блок except их необходимо перечислить в скобках (круглых) через запятую после оператора except.
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.7]{images/lec08-pic06-python.png}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{try...except}
+	Если хотим обрабатывать ValueError, ZeroDivisionError по отдельности, при этом, сохранить работоспособность при возникновении исключений отличных от вышеперечисленных:
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.7]{images/lec08-pic07-python.png}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{try...except}
+	Существует возможность передать подробную информацию о произошедшем исключении в код внутри блока except:
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.7]{images/lec08-pic08-python.png}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Использование finally в обработке исключений}
+	Для выполнения определенного программного кода при выходе из блока try/except, используйте оператор finally:
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.7]{images/lec08-pic09-python.png}
+	\end{figure}
+	Не зависимо от того, возникнет или нет во время выполнения кода в блоке try исключение, код в блоке finally все равно будет выполнен.
+\end{frame}
+
+\begin{frame}{Использование finally в обработке исключений}
+	Если необходимо выполнить какой-то программный код, в случае если в процессе выполнения блока try не возникло исключений, то можно использовать оператор else:
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.7]{images/lec08-pic10-python.png}
+	\end{figure}	
+\end{frame}
+
+\begin{frame}{Генерация исключений в Python}
+	Для принудительной генерации исключения используется инструкция raise. Самый простой пример работы с raise может выглядеть так:
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.7]{images/lec08-pic11-python.png}
+	\end{figure}	
+\end{frame}
+
+\begin{frame}{Пользовательские исключения в Python}
+	В Python можно создавать собственные исключения. Такая практика позволяет увеличить гибкость процесса обработки ошибок в рамках той предметной области, для которой написана ваша программа.
+
+	\medskip
+
+	Для реализации собственного типа исключения необходимо создать класс, являющийся наследником от одного из классов исключений:
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.7]{images/lec08-pic12-python.png}
+	\end{figure}	
+\end{frame}
+
+\begin{frame}[fragile]
+	\begin{minted}{python}
+f = open('1.txt')
+
+ints = []
+
+try:
+	for line in f:
+		ints.append(int(line))
+except ValueError:
+	print('Это не число. Выходим.')
+except Exception:
+	print('Это что ещё такое?')
+else:
+	print('Всё хорошо.')
+finally:
+	f.close()
+	print('Я закрыл файл.')
+	\end{minted}
+\end{frame}
+
 \end{document}
