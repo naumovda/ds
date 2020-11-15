@@ -1,0 +1,815 @@
+\documentclass[xcolor=table]{beamer}
+\mode<presentation>
+\usetheme{CambridgeUS}
+\usepackage[english, russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage{sansmathaccent}
+\usepackage{alltt}
+\usepackage[table]{xcolor}
+%\linespread{0.8}
+\usepackage{minted}
+%\usepackage{setspace}
+
+\pdfmapfile{+sansmathaccent.map}
+\title[Software Design]{Стиль программирования}
+\author{Наумов Д.А., доц. каф. КТ}
+\date[15.11.2020] {Основы программной инженерии, 2020}
+
+\begin{document}
+
+%ТИТУЛЬНЫЙ СЛАЙД
+\begin{frame}
+  \titlepage
+\end{frame}
+  
+%СОДЕРЖАНИЕ ЛЕКЦИИ
+\begin{frame}
+  \frametitle{Содержание лекции}
+  \tableofcontents  
+\end{frame}
+
+\section{Оформление кода}
+
+\begin{frame}{PEP8 - стиль кода в языке Python}
+	\begin{block}{PEP8}
+		документ описывает соглашение о том, как писать код для языка \textit{python}, включая стандартную библиотеку, входящую в состав \textit{python}. 	
+	\end{block}
+	\begin{itemize}
+		\item документ создан на основе рекомендаций Гуидо ван Россума с добавлениями от Барри. 
+		\item этот PEP фактически, наверное, никогда не будет закончен.
+	\end{itemize}	
+	\begin{quotation}
+	A foolish consistency is the hobgoblin of little minds, adored by little statesmen and philosophers and divines. \\
+	Ральф Уолдо Эмерсон, <<Доверие к себе>>	
+	\end{quotation}
+	\begin{itemize}
+		\item Гвидо Ван Россум хотел, чтобы его стилю соответствовали каждая функция, каждый модуль и каждый проект. 
+		\item можно довериться себе и отклонится от PEP8 в угоду читаемости, сформированного в проекте стилю и другим моментам.
+		\item Прямое следование гайду ни к чему хорошему не приведет.
+	\end{itemize}	
+\end{frame}
+
+\begin{frame}{PEP8 - стиль кода в языке Python}
+	\textbf{Ключевая идея}: код читается намного больше раз, чем пишется. 
+	\begin{itemize}
+		\item Собственно, рекоммендации о стиле написания кода направлены на то, чтобы улучшить читабельность кода и сделать его согласованным между большим числом проектов. 
+		\item В идеале, весь код будет написан в едином стиле, и любой сможет легко его прочесть. 
+	\end{itemize}	
+	Согласованность:
+	\begin{itemize}
+		\item с PEP8;
+		\item внутри проекта;
+		\item внутри функции или модуля.				
+	\end{itemize}		
+	Две причины, чтобы нарушить правила:
+	\begin{itemize}
+		\item Когда применение правила сделает код менее читабельным даже для того, кто привык читать код, который следует правилам.
+		\item Чтобы писать в едином стиле с кодом, который уже есть в проекте и который нарушает правила (может быть, в силу исторических причин) — впрочем, это возможность подчистить чужой код.	
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Внешний вид кода}
+	\textbf{Отступы}: 
+	\begin{itemize}
+		\item Используйте 4 пробела на один уровень отступа. 
+		\item В старом коде, который вы не хотите трогать, можно продолжить пользоваться 8 пробелами для отступа.
+	\end{itemize}	
+	\textbf{Табуляция или пробелы}?
+	\begin{itemize}
+		\item Самый распространенный способ отступов -- пробелы. 
+		\item На втором месте — отступы только с использованием табуляции. 
+		\item Код, в котором используются и те, и другие типы отступов, должен быть исправлен так, чтобы отступы в нем были расставлены только с помощью пробелов.
+		\item Никогда не смешивайте символы табуляции и пробелы.		
+	\end{itemize}		
+\end{frame}
+
+\begin{frame}{Максимальная длина строки}
+	\begin{itemize}
+		\item Ограничьте максимальную длину строки 79 символами.
+		\begin{itemize}		
+			\item Пока еще существует немало устройств, где длина строки равна 80 символам; 
+			\item ограничив ширину окна 80 символами, мы сможем расположить несколько окон рядом друг с другом. 
+			\item автоматический перенос строк на таких устройствах нарушит форматирование, и код будет труднее понять. 
+		\end{itemize}		
+		\item Предпочтительный способ переноса длинных строк -- использование подразумевающегося продолжения строки между обычными, квадратными и фигурными скобками. 
+		\item В случае необходимости можно добавить еще одну пару скобок вокруг выражения, но часто лучше выглядит обратный слэш. 
+			\item Постарайтесь сделать правильные отступы для перенесённой строки.
+			\item Предпочтительнее вставить перенос строки после бинарного оператора, но не перед ним.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile,shrink]
+	\begin{minted}{python}
+class Rectangle(Blob):
+
+    def __init__(self, width, height,
+                 color='black', emphasis=None, highlight=0):
+        if (width == 0 and height == 0 and
+                color == 'red' and emphasis == 'strong' or
+                highlight > 100):
+            raise ValueError("sorry, you lose")
+        if width == 0 and height == 0 and (color == 'red' or
+                                           emphasis is None):
+        Blob.__init__(self, width, height,
+                      color, emphasis, highlight) 
+                      
+raise ValueError("I don't think so -- values are %s, %s" %
+                 (width, height))                      
+	\end{minted}
+\end{frame}
+
+\begin{frame}{Пустые строки}
+	\begin{itemize}
+		\item Отделяйте функции (верхнего уровня, не функции внутри функций) и определения классов двумя пустыми строчками.
+		\item Определения методов внутри класса отделяйте одной пустой строкой.
+		\item Дополнительные отступы строками могут быть изредка использованы для выделения группы логически связанных функций. Пустые строки могут быть пропущены, между несколькими выражениями, записанными в одну строку, например, <<заглушки>> функций.
+		\item Используйте (без энтузиазма) пустые строки в коде функций, чтобы отделить друг от друга логические части.
+		\item Python расценивает символ control+L как незначащий (whitespace), и вы можете использовать его, потому что многие редакторы обрабатывают его как разрыв страницы — таким образом логические части в файле будут на разных страницах.		
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Кодировки (PEP 263)}
+	\begin{itemize}
+		\item Код ядра python всегда должен использовать ASCII или Latin-1 кодировку (также известную как ISO-8859-1). 
+		\item Начиная с версии python 3.0, предпочтительной является кодировка UTF-8 (смотрите PEP 3120).
+		\item Files using ASCII (or UTF-8, for Python 3.0) should not have a coding cookie. 
+		\item Используйте Latin-1 (или UTF-8), только если это необходимо, чтобы указать в комментарии или строке документации имя автора, содержащее в себе символ из Latin-1. В противном случае предпочтительнее использовать escape-символы $\setminus x$, $\setminus u$ или $\setminus U$ для не-ASCII символов в строках.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Кодировки (PEP 263)}
+	Начиная с версии python 3.0 в стандартной библиотеке действует следующая политика (смотрите PEP 3131): 
+	\begin{itemize}
+		\item Все идентификаторы обязаны содержать только ASCII символы, и означать английские слова везде, где это возможно (во многих случаях используются сокращения или неанглийские технические термины). 
+		\item Строки и комментарии тоже должны содержать лишь ASCII символы.
+		\item Исключения составляют: (а) test case, тестирующий не-ASCII особенности программы, и (б) имена авторов. 
+		\item Авторы, буквы в именах которых не из латинского алфавита, должны транслитерировать свои имена в латиницу.		
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Import-секции}
+	Импортирование разных модулей должно быть на разных строчках, например:
+	
+	~
+	
+	\textbf{Правильно:}
+	\begin{minted}{python}
+import os
+import sys	
+	\end{minted}
+	
+	~
+	
+	\textbf{Неправильно:}
+	\begin{minted}{python}
+import os, sys	
+	\end{minted}
+
+	~	
+	
+	В то же время, можно писать вот так:
+	\begin{minted}{python}
+from subprocess import Popen, PIPE
+	\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Import-секции}
+	Импортирование всегда нужно делать сразу после комментариев к модулю и строк документации, перед объявлением глобальных переменных и констант.
+
+	~
+	Группируйте импорты в следующем порядке:
+	\begin{itemize}
+		\item импорты стандартной библиотеки;
+		\item импорты сторонних библиотек;
+		\item импорты модулей текущего проекта.
+	\end{itemize}
+	Вставляйте пустую строку между каждой группой импортов.
+
+	~
+	
+	Указывайте спецификации \_\_all\_\_ после импортов (список публичных объектов данного модуля).
+	\begin{minted}{python}
+	__all__ = ["MyClass", "MyClass2"]).
+	\end{minted}
+	При импорте 
+	\begin{minted}{python}
+	from mymodule import * 
+	\end{minted}
+	импортированы будут только те объекты, которые описаны в \_\_all\_\_.
+\end{frame}
+
+\begin{frame}[fragile]{Пробелы в выражениях и инструкциях}
+	Избегайте использования пробелов в следующих ситуациях:
+	
+	1. Сразу после или перед скобками (обычными, фигурными и квадратными)
+	\begin{minted}{python}
+правильно:
+    spam(ham[1], {eggs: 2})
+
+неправильно:
+    spam( ham[ 1 ], { eggs: 2 } )	
+	\end{minted}
+	
+	~
+	
+	2. Сразу перед запятой, точкой с запятой, двоеточием:
+	\begin{minted}{python}
+правильно:
+    if x == 4: print x, y; x, y = y, x
+
+неправильно:
+    if x == 4 : print x , y ; x , y = y , x
+	\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Пробелы в выражениях и инструкциях}
+	3. Сразу перед открывающей скобкой, после которой начинается список аргументов при вызове функции:
+	\begin{minted}{python}
+правильно:
+    spam(1)
+
+неправильно:
+    spam (1)	
+	\end{minted}
+	
+	4. Сразу перед открывающей скобкой, после которой следует индекс или срез:
+	\begin{minted}{python}
+правильно:
+    dict['key'] = list[index]
+
+неправильно:
+    dict ['key'] = list [index]	
+	\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Пробелы в выражениях и инструкциях}
+	5. Использование более одного пробела вокруг оператора присваивания (или любого другого) для того, чтобы выровнять его с другим таким же оператором на соседней строке:
+	\begin{minted}{python}
+правильно:
+x = 1 
+y = 2 
+long_variable = 3 
+
+неправильно:
+x             = 1 
+y             = 2 
+long_variable = 3
+	\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Прочие рекоммендации:}
+	1. Вседа окружайте эти бинарные операторы одним пробелом с каждой стороны: присваивание (=, +=, -= и прочие), сравнения (==, <, >, !=, <>, <=, >=, in, not in, is, is not), логические операторы (and, or, not).
+	
+	2. Ставьте пробелы вокруг арифметических операций.
+	
+	\textit{правильно:}	
+	\begin{minted}{python}
+	i = i + 1 
+	submitted += 1 
+	x = x * 2 - 1 
+	hypot2 = x * x + y * y 
+	c = (a + b) * (a - b) 
+	\end{minted}
+	\textit{неправильно:}	
+	\begin{minted}{python}
+	i=i+1 
+	submitted +=1 
+	x = x*2 - 1 
+	hypot2 = x*x + y*y 
+	c = (a+b) * (a-b)
+	\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Прочие рекоммендации:}
+	3. Не используйте пробелы для отделения знака =, когда он употребляется для обозначения аргумента-ключа (keyword argument) или значения параметра по умолчанию.
+	
+	~
+	
+	\textit{правильно:}	
+	\begin{minted}{python}
+	def complex(real, imag=0.0): 
+    	return magic(r=real, i=imag) 
+	\end{minted}
+	\textit{неправильно:}	
+	\begin{minted}{python}
+	def complex(real, imag = 0.0): 
+    	return magic(r = real, i = imag) 
+	\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Прочие рекоммендации:}
+	4. Не используйте составные инструкции (несколько команд в одной строке).
+	
+	~
+	
+	\textit{правильно:}	
+	\begin{minted}{python}
+	if foo == 'blah': 
+    	do_blah_thing() 
+	
+	do_one() 
+	do_two() 
+	do_three() 
+	\end{minted}
+	\textit{неправильно:}	
+	\begin{minted}{python}
+	if foo == 'blah': do_blah_thing() 
+	do_one(); do_two(); do_three()
+	\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Прочие рекоммендации:}
+	5. Иногда можно писать тело циклов while, for или ветку if в той же строке, если команда короткая, но если команд несколько, никогда так не пишите.
+	
+	~
+	
+	\textit{можно иногда:}	
+	\begin{minted}{python}
+	if foo == 'blah': do_blah_thing() 
+	for x in lst: total += x 
+	while t < 10: t = delay()  
+	\end{minted}
+	\textit{неправильно:}	
+	\begin{minted}{python}
+	if foo == 'blah': do_blah_thing() 
+	else: do_non_blah_thing() 
+	try: something() 
+	finally: cleanup() 
+	do_one(); do_two(); do_three(long, argument, 
+                                 list, like, this) 
+	if foo == 'blah': one(); two(); three()
+	\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Комментарии}
+	\begin{itemize}
+		\item Комментарии, противоречащие коду, хуже, чем отсутствие комментариев. Всегда исправляйте комментарии, если меняете код!
+		\item Комментарии должны являться законченными предложениями. Если комментарий — фраза или предложение, первое слово должно быть написано с большой буквы, если только это не имя переменной, которая начинается с маленькой буквы (никогда не изменяйте регистр переменной!).
+		\item Если комментарий короткий, можно опустить точку в конце предложения. 
+		\item Ставьте два пробела после точки в конце предложения.
+		\item Программисты, которые не говорят на английском языке, пожалуйста, пишите комментарии на английском, если только вы не уверены на 120\%, что ваш код никогда не будут читать люди, не знающие вашего родного языка.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Блоки комментариев}
+	\begin{itemize}
+		\item Блок комментариев обычно объясняет код (весь, или только некоторую часть), идущий после блока, и должен иметь тот же отступ, что и сам код. 
+		\item Каждая строчка такого блока должна начинаться с символа \# и одного пробела после него (если только сам текст комментария не имеет отступа).
+		\item Абзацы внутри блока комментариев разделяются строкой, состоящей из одного символа \#.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Встрочные комментарии}
+	<<Встрочные>> комментарии - комментарии в строке с кодом
+	\begin{itemize}
+		\item Старайтесь реже использовать подобные комментарии.
+		\item Такой комментарий находится в той же строке, что и инструкция. "Встрочные" комментарии должны отделяться по крайней мере двумя пробелами от инструкции. Они должны начинаться с символа \# и одного пробела.
+		\item Комментарии в строке с кодом не нужны и только отвлекают от чтения, если они объясняют очевидное. 
+	\end{itemize}
+	
+	~
+	
+	Не пишите вот так:
+	\begin{minted}{python}
+	x = x + 1  # Increment x
+	\end{minted}
+	Впрочем, такие комментарии иногда полезны:	
+	\begin{minted}{python}
+	x = x + 1  # Место для рамки окна
+	\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Строки документации}
+	\begin{itemize}
+		\item Пишите документацию для всех публичных модулей, функций, классов, методов.
+		\item Строки документации необязательны для приватных методов, но лучше написать, что делает метод. 
+		\item Комментарий нужно писать после строки с def.
+		\item PEP 257 объясняет, как правильно и хорошо документировать.
+	\end{itemize}
+	Очень важно, чтобы закрывающие кавычки стояли на отдельной строке. А еще лучше, если перед ними будет ещё и пустая строка, например: 	
+	\begin{minted}{python}
+"""Return a foobang
+
+Optional plotz says to frobnicate the bizbaz first.
+
+"""
+	\end{minted}
+	\begin{itemize}
+		\item Для однострочной документации можно оставить закрывающие кавычки на той же строке.
+	\end{itemize}	
+\end{frame}
+
+\begin{frame}[fragile]{Соглашения по наименованию}
+	\begin{block}{Главный принцип}
+		Имена, которые видны пользователю как часть общественного API должны следовать конвенциям, которые отражают использование, а не реализацию.	
+	\end{block}
+	\begin{itemize}
+		\item Соглашения по именованию переменных в python немного туманны, поэтому их список никогда не будет полным.
+		\item Новые модули и пакеты должны быть написаны согласно этим стандартам, но если в какой-либо уже существующей библиотеке эти правила нарушаются, предпочтительнее писать в едином с ней стиле. 
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Стили имен}
+	Обычно различают следующие стили:
+	\begin{itemize}
+		\item b (одиночная маленькая буква)
+		\item B (одиночная заглавная буква)
+		\item lowercase (слово в нижнем регистре)
+		\item lower\_case\_with\_underscores (слова из маленьких букв с подчеркиваниями)
+		\item UPPERCASE (заглавные буквы)
+		\item UPPERCASE\_WITH\_UNDERSCORES (слова из заглавных букв с подчеркиваниями)
+		\item CapitalizedWords (слова с заглавными буквами, или CapWords, или CamelCase). 			\item mixedCase (отличается от CapitalizedWords тем, что первое слово начинается с маленькой буквы)
+		\item Capitalized\_Words\_With\_Underscores (слова с заглавными буквами и подчеркиваниями -- уродливо!)
+	\end{itemize}	
+\end{frame}
+
+\begin{frame}[fragile]{Стили имен}
+	\begin{itemize}
+		\item \_single\_leading\_underscore: слабый индикатор того, что имя используется для внутренних нужд. Например, from M import * не будет импортировать объекты, чьи имена начинаются с символа подчеркивания.
+		\item single\_trailing\_underscore\_: используется по соглашению для избежания конфликтов с ключевыми словами языка python, например:
+		\begin{minted}{python}
+Tkinter.Toplevel(master, class_='ClassName')
+		\end{minted}
+		\item \_\_double\_leading\_underscore: изменяет имя атрибута класса, то есть в классе FooBar поле \_\_boo становится \_FooBar\_\_boo.
+		\item \_\_double\_leading\_and\_trailing\_underscore\_\_ (двойное подчеркивание в начале и в конце имени): магические методы или атрибуты, которые находятся в пространствах имен, управляемых пользователем. Например, \_\_init\_\_, \_\_import\_\_ или \_\_file\_\_. Не изобретайте такие имена, используйте их только так, как написано в документации.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Предписания: соглашения по именованию}
+	\begin{block}{Имена, которых следует избегать}
+		\begin{itemize}
+			\item Никогда не используйте символы l (маленькая латинская буква «эль»), O (заглавная латинская буква «о») или I (заглавная латинская буква «ай») как однобуквенные идентификаторы.
+			\item В некоторых шрифтах эти символы неотличимы от цифры один и нуля. Если очень нужно l, пишите вместо неё заглавную L..	
+		\end{itemize}			
+	\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Предписания: соглашения по именованию}
+	\begin{block}{Имена модулей и пакетов}
+		\begin{itemize}
+			\item Модули должны иметь короткие имена, состоящие из маленьких букв. Можно использовать символы подчеркивания, если это улучшает читабельность. 
+			\item В именах пакетов не рекомендуется использовать символ подчёркивания.
+			\item Так как имена модулей отображаются в имена файлов, а некоторые файловые системы являются нечувствительными к регистру символов и обрезают длинные имена, очень важно использовать достаточно короткие имена модулей.
+			\item Когда модуль расширения, написанный на С или C++, имеет сопутствующий python-модуль (содержащий интерфейс высокого уровня), С/С++ модуль начинается с символа подчеркивания, например, \_socket.
+		\end{itemize}			
+	\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Предписания: соглашения по именованию}
+	\begin{block}{Имена классов}
+		\begin{itemize}
+			\item Имена классов должны обычно следовать соглашению CapWords.
+			\item Существуют отдельные соглашения о встроенных именах: большинство встроенных имен -- одно слово (либо два слитно написанных слова), а соглашение CapWords используется только для именования исключений и встроенных констант.
+		\end{itemize}			
+	\end{block}
+	\begin{block}{Имена исключений}
+		\begin{itemize}
+			\item Так как исключения являются классами, к исключениями применяется стиль именования классов. 
+			\item Однако вы можете добавить Error в конце имени (если, конечно, исключение действительно является ошибкой).
+		\end{itemize}			
+	\end{block}	
+\end{frame}
+	
+\begin{frame}[fragile]{Предписания: соглашения по именованию}
+	\begin{block}{Имена глобальных переменных}
+		\begin{itemize}
+			\item Будем надеяться, что глобальные переменные используются только внутри одного модуля. Руководствуйтесь теми же соглашениями, что и для имен функций.
+			\item Добавляйте в модули, которые написаны так, чтобы их использовали с помощью from M import *, механизм \_\_all\_\_, чтобы предотвратить экспортирование глобальных переменных. 
+			\item Или же, используйте старое соглашение, добавляя перед именами таких глобальных переменных один символ подчеркивания (которым вы можете обозначить те глобальные переменные, которые используются только внутри модуля).
+		\end{itemize}			
+	\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Предписания: соглашения по именованию}
+	\begin{block}{Имена функций}
+		\begin{itemize}
+			\item Имена функций должны состоять из маленьких букв, а слова разделяться символами подчеркивания.
+			\item Стиль mixedCase допускается в тех местах, где уже преобладает такой стиль, для сохранения обратной совместимости.
+		\end{itemize}			
+	\end{block}
+	\begin{block}{Аргументы функций и методов}
+		\begin{itemize}
+			\item Всегда используйте self в качестве первого аргумента метода экземпляра объекта.
+			\item Всегда используйте cls в качестве первого аргумента метода класса.
+			\item Если имя аргумента конфликтует с зарезервированным ключевым словом python, обычно лучше добавить в конец имени символ подчеркивания, чем исказить написание слова или использовать аббревиатуру. 
+		\end{itemize}			
+	\end{block}	
+\end{frame}
+
+\begin{frame}[fragile]{Предписания: соглашения по именованию}
+	\begin{block}{Имена методов и переменных экземпляров классов}
+		\begin{itemize}
+			\item Используйте тот же стиль, что и для имен функций: имена должны состоять из маленьких букв, а слова разделяться символами подчеркивания.
+			\item Используйте один символ подчёркивания перед именем для непубличных методов и атрибутов.
+			\item Чтобы избежать конфликтов имен с подклассами, используйте два ведущих подчеркивания.
+			\item Python искажает эти имена: если класс Foo имеет атрибут с именем \_\_a, он не может быть доступен как Foo.\_\_a.
+		\end{itemize}			
+	\end{block}
+	\begin{block}{Константы}
+		\begin{itemize}
+			\item Константы обычно объявляются на уровне модуля и записываются только заглавными буквами, а слова разделяются символами подчеркивания. Например: MAX\_OVERFLOW, TOTAL.	
+		\end{itemize}			
+	\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Общие рекомендации}
+	\begin{itemize}
+		\item Код должен быть написан так, чтобы не зависеть от разных реализаций языка (PyPy, Jython, IronPython, Pyrex, Psyco и пр.).
+		\item Сравнения с None должны обязательно выполняться с использованием операторов is или is not, а не с помощью операторов сравнения. Кроме того, не пишите if x, если имеете в виду if x is not None -- если, к примеру, при тестировании такая переменная может принять значение другого типа, отличного от None, но при приведении типов может получиться False!
+		\item При реализации методов сравнения, лучше всего реализовать все 6 операций сравнения (\_\_eq\_\_, \_\_ne\_\_, \_\_lt\_\_, \_\_le\_\_, \_\_gt\_\_, \_\_ge\_\_), чем полагаться на то, что другие программисты будут использовать только конкретный вид сравнения.
+		\item PEP 207 указывает, что интерпретатор может поменять y > х на х < y, y >= х на х <= y, и может поменять местами аргументы х == y и х != y. 		
+	\end{itemize}			
+\end{frame}
+
+\begin{frame}[fragile]{Рекомендации по обработке исключений}
+	\begin{itemize}
+		\item Наследуйте свой класс исключения от Exception, а не от BaseException. Прямое наследование от BaseException зарезервировано для исключений, которые не следует перехватывать.
+		\item Когда вы генерируете исключение, пишите raise ValueError('message')
+		\item Когда код перехватывает исключения, перехватывайте конкретные ошибки вместо простого выражения except:	
+		\begin{minted}{python}
+try:
+    import platform_specific_module
+except ImportError:
+    platform_specific_module = None
+		\end{minted}
+	\end{itemize}			
+\end{frame}
+
+\begin{frame}[fragile]{Рекомендации по обработке исключений}
+	\begin{itemize}
+		\item Простое написание "except:" также перехватит и SystemExit, и KeyboardInterrupt, что породит проблемы, например, сложнее будет завершить программу нажатием control+C. 
+		\item Если вы действительно собираетесь перехватить все исключения, пишите "except Exception:".
+		\item Хорошим правилом является ограничение использования "except:", кроме двух случаев:
+		\begin{enumerate}
+			\item Если обработчик выводит пользователю всё о случившейся ошибке; по крайней мере, пользователь будет знать, что произошла ошибка.
+			\item Если нужно выполнить некоторый код после перехвата исключения, а потом вновь "бросить" его для обработки где-то в другом месте. Обычно же лучше пользоваться конструкцией "try...finally".		
+		\end{enumerate}
+		\item Постарайтесь заключать в каждую конструкцию try...except минимум кода, чтобы легче отлавливать ошибки.
+	\end{itemize}			
+\end{frame}
+
+\begin{frame}[fragile]{Рекомендации по обработке исключений}
+	Правильно:
+	\begin{minted}{python}
+try:
+    value = collection[key]
+except KeyError:
+    return key_not_found(key)
+else:
+    return handle_value(value)		
+	\end{minted}
+	Неправильно:
+	\begin{minted}{python}
+try:
+    # Здесь много действий!
+    return handle_value(collection[key])
+except KeyError:
+    # Здесь также перехватится KeyError, который может быть сгенерирован handle_value()
+    return key_not_found(key)		
+	\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+	1. Сравнение типов объектов нужно делать с помощью isinstance(), а не прямым сравнением типов:
+	
+	\textit{Правильно:}
+	\begin{minted}{python}
+	if isinstance(obj, int):
+	\end{minted}
+	\textit{Неправильно:}
+	\begin{minted}{python}
+	if type(obj) is type(1):
+	\end{minted}
+	
+	2. Для последовательностей (строк, списков, кортежей) используйте тот факт, что пустая последовательность есть false:		
+	
+	\textit{Правильно:}
+	\begin{minted}{python}
+	if not seq:
+	if seq:
+	\end{minted}
+	\textit{Неправильно:}
+	\begin{minted}{python}
+	if len(seq)
+	if not len(seq)
+	\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+	3. Не пользуйтесь строковыми константами, которые имеют важные пробелы в конце — они невидимы, а многие редакторы (а теперь и reindent.py) обрезают их.
+
+	~	
+	
+	4. Не сравнивайте логические типы с True и False с помощью ==:
+	
+	\textit{Правильно:}
+	\begin{minted}{python}
+	if greeting:
+	\end{minted}
+	\textit{Неправильно:}
+	\begin{minted}{python}
+	if greeting == True:
+	\end{minted}
+	\textit{Совсем неправильно:}
+	\begin{minted}{python}
+	if greeting is True:
+	\end{minted}
+\end{frame}
+
+\section{Анализаторы кода}
+
+\begin{frame}
+  \frametitle{Содержание лекции}
+  \tableofcontents[current]
+\end{frame}
+
+\begin{frame}[fragile]
+	Два типа ошибок, которые обнаруживают анализаторы кода:
+	\begin{itemize}
+		\item ошибки стиля (неправильные отступы, длинные строки); 	
+		\item ошибки в логике программы и ошибки синтаксиса языка программирования;
+		\begin{itemize}
+			\item опечатки при написании названий стандартных функций;
+			\item неиспользуемые импорты;
+			\item дублирование кода.
+		\end{itemize} 
+	\end{itemize}
+
+	Существуют и другие виды ошибок, например — оставленные в коде пароли или высокая цикломатическая сложность.	
+\end{frame}
+
+\begin{frame}[fragile, shrink]{Тестовый файл}
+	\begin{minted}{python}
+import os
+import notexistmodule
+
+def Function(num,num_two):
+    return num
+	
+class MyClass:
+    """class MyClass """
+
+    def __init__(self,var):
+        self.var=var
+
+    def out(var):
+        print(var)
+
+if __name__ == "__main__":
+    my_class = MyClass("var")
+    my_class.out("var")
+    notexistmodule.func(5)
+	\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+	В коде допущено несколько ошибок:
+	\begin{itemize}
+		\item импорт неиспользуемого модуля os,
+		\item импорт не существующего модуля notexistmodule,
+		\item имя функции начинается с заглавной буквы,
+		\item лишние аргументы в определении функции,
+		\item отсутствие self первым аргументом в методе класса,
+		\item неверное форматирование.
+	\end{itemize}	
+\end{frame}
+
+\begin{frame}[fragile]{Pycodestyle}
+	Pycodestyle -- простая консольная утилита для анализа кода Python, а именно для проверки кода на соответствие PEP8.
+
+	~
+		
+	Запустим проверку на нашем коде:
+	\begin{minted}{bash}
+> python3 -m pycodestyle example.py 
+
+example.py:4:1: E302 expected 2 blank lines, found 1
+example.py:4:17: E231 missing whitespace after ','
+example.py:7:1: E302 expected 2 blank lines, found 1
+example.py:10:22: E231 missing whitespace after ','
+example.py:11:17: E225 missing whitespace around operator
+	\end{minted}
+	 Вывод показывает строки, в которых, по мнению анализатора, есть нарушение соглашений PEP8. 
+
+	~	 
+	
+	 Формат вывода:
+<имя файла>: <номер строки> :<положение символа>: <код и короткая расшифровка ошибки>
+\end{frame}
+
+\begin{frame}[fragile]{Pycodestyle}
+	Ограничения программы:
+	\begin{itemize}
+		\item можно настроить уровень проверок; 
+		\item нет проверка на правильность именования; 
+		\item проверка документации сводится к проверки длины docstring.
+	\end{itemize}		
+	\begin{minted}{bash}
+> python3 -m pycodestyle --statistics -qq example.py 
+
+1 E225 missing whitespace around operator
+2 E231 missing whitespace after ','
+2 E302 expected 2 blank lines, found 1	
+	\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+	Более наглядный вывод: ключ --show-source. 
+	\begin{minted}{bash}
+> python3 -m pycodestyle --show-source example.py 
+
+example.py:4:1: E302 expected 2 blank lines, found 1
+def Function(num,num_two):
+^
+example.py:4:17: E231 missing whitespace after ','
+def Function(num,num_two):
+^
+example.py:7:1: E302 expected 2 blank lines, found 1
+class MyClass:
+^
+example.py:10:22: E231 missing whitespace after ','
+def __init__(self,var):
+^
+example.py:11:17: E225 missing whitespace around operator
+self.var=var
+^
+	\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Pydocstyle}
+	 Pydocstyle проверяет наличие docstring у модулей, классов, функций и их соответствие официальному соглашению PEP257. 
+	\begin{minted}{bash}
+> python3 -m pydocstyle example.py
+
+example.py:1 at module level:
+D100: Missing docstring in public module
+example.py:4 in public function `Function`:
+D103: Missing docstring in public function
+example.py:7 in public class `MyClass`:
+D400: First line should end with a period (not 's')
+example.py:7 in public class `MyClass`:
+D210: No whitespaces allowed surrounding docstring text
+example.py:10 in public method `__init__`:
+D107: Missing docstring in __init__
+example.py:13 in public method `out`:
+D102: Missing docstring in public method
+	\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Pyflakes}
+	 Pyflakes -- анализатор кода, осуществляет поиск логических и синтаксических ошибок. 
+	\begin{minted}{bash}
+> python3 -m pyflakes example.py 
+
+example.py:1: 'os' imported but unused
+	\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Pylint}
+	 Pylint совместил в себе поиск стилистических и логических ошибок. 
+	\begin{minted}{bash}
+> python3.6 -m pylint --reports=y text example.py
+...
+	\end{minted}
+	Полный отчет в \textit{pylint\_result.txt}
+
+	~
+	
+	Программа имеет свою внутреннюю маркировку проблемных мест в коде:
+	\begin{itemize}
+		\item \textbf{R}efactor -- требуется рефакторинг,
+		\item \textbf{C}onvention -- нарушено следование стилистике и соглашениям,
+		\item \textbf{W}arning -- потенциальная ошибка,
+		\item \textbf{E}rror -- ошибка,
+		\item \textbf{F}atal -- ошибка, которая препятствует дальнейшей работе программы.	
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Pylint}
+	Основные возможности:
+	\begin{itemize}
+		\item генерация файла настроек (--generate-rcfile). 
+		\item отключение вывода в коде. 		
+		\begin{minted}{python}
+	# pylint: disable=unused-argument
+		\end{minted}
+		\item cоздание отчетов в формате json (--output-format=json)		
+		\item запуск в нескольких параллельных потоках на многоядерных процессорах;
+		\item встроенная документация
+		\begin{minted}{bash}
+> python3.6 -m pylint --help-msg=import-error
+
+:import-error (E0401): *Unable to import %s*
+Used when pylint has been unable to import a module. This message belongs to
+the imports checker.
+		\end{minted}
+		\item возможность подключения плагинов;		
+		\item вывод <<прогресса>>.
+	\end{itemize}
+
+\end{frame}
+
+%Руководства по стилям: для тех, кто впервые сталкивается с темой оформления кода, в качестве знакомства предлагаем прочитать официальные руководства по стилю для языка Python PEP8 и PEP257. В качестве примера внутрикорпоративных соглашений можно рассмотреть Google Python Style Guide — https://github.com/google/styleguide/blob/gh-pages/pyguide.md
+
+\end{document}

@@ -1,0 +1,124 @@
+$ python3.6 -m pylint --reports=y text example.py
+
+************* Module text
+/home/ququshka77/.local/lib/python3.6/site-packages/pylint/reporters/text.py:79:22: W0212: Access to a protected member _splitstrip of a client class (protected-access)
+************* Module example
+example.py:4:16: C0326: Exactly one space required after comma
+def Function(num,num_two):
+                           ^ (bad-whitespace)
+example.py:10:21: C0326: Exactly one space required after comma
+    def __init__(self,var):
+                             ^ (bad-whitespace)
+example.py:11:16: C0326: Exactly one space required around assignment
+        self.var=var
+                    ^ (bad-whitespace)
+example.py:1:0: C0111: Missing module docstring (missing-docstring)
+example.py:2:0: E0401: Unable to import 'notexistmodule' (import-error)
+example.py:4:0: C0103: Function name "Function" doesn't conform to snake_case naming style (invalid-name)
+example.py:4:0: C0111: Missing function docstring (missing-docstring)
+example.py:4:17: W0613: Unused argument 'num_two' (unused-argument)
+example.py:13:4: C0111: Missing method docstring (missing-docstring)
+example.py:13:4: E0213: Method should have "self" as first argument (no-self-argument)
+example.py:7:0: R0903: Too few public methods (1/2) (too-few-public-methods)
+example.py:18:4: C0103: Constant name "my_class" doesn't conform to UPPER_CASE naming style (invalid-name)
+example.py:19:4: E1121: Too many positional arguments for method call (too-many-function-args)
+example.py:1:0: W0611: Unused import os (unused-import)
+
+Report
+======
+112 statements analysed.
+
+Statistics by type
++----------+----------+---------------+-------------+-------------------+---------------+
+|type     |number      |old number        |difference      |%documented       |%badname |
++======+======+========+========+===========+========+
+|module   |2           |2                 |=               |50.00             |0.00            |
++-----------+----------+---------------+-------------+-------------------+---------------+
+|class    |5           |5                 |=               |100.00            |0.00            |
++-----------+----------+---------------+-------------+-------------------+---------------+
+|method   |11          |11                |=               |90.91             |0.00            |
++-----------+----------+---------------+-------------+-------------------+---------------+
+|function |4           |4                 |=               |75.00             |25.00          |
++-----------+----------+---------------+-------------+-------------------+---------------+
+
+External dependencies
+::
+    pylint 
+      \-interfaces (text)
+      \-reporters (text)
+      | \-ureports 
+      |   \-text_writer (text)
+      \-utils (text)
+
+
+Raw metrics
++-------------+----------+-------+-----------+-------------+
+|type        |number |%     |previous    |difference |
++=======+======+=====+=====+========+
+|code        |128    |48.30 |128         |=               |
++-------------+----------+--------+-----------+------------+
+|docstring   |84     |31.70 |84          |=               |
++-------------+----------+--------+-----------+------------+
+|comment     |16     |6.04  |16          |=               |
++-------------+----------+--------+-----------+------------+
+|empty       |37     |13.96 |37          |=               |
++-------------+----------+--------+-----------+------------+
+
+Duplication
++-------------------------------+------+------------+-------------+
+|                            |now      |previous      |difference |
++=================+=====+======+========+
+|nb duplicated lines         |0        |0             |=              |
++-------------------------------+-------+------------+------------+
+|percent duplicated lines    |0.000    |0.000         |=              |
++-------------------------------+-------+------------+------------+
+
+Messages by category
++--------------+----------+-----------+-------------+
+|type            |number |previous |difference |
++========+======+======+========+
+|convention      |8       |8       |=               |
++--------------+----------+-----------+-------------+
+|refactor        |1       |1       |=               |
++--------------+-----------+----------+-------------+
+|warning         |3       |3       |=               |
++--------------+-----------+----------+-------------+
+|error           |3       |3       |=               |
++--------------+-----------+----------+-------------+
+
+% errors / warnings by module
++-----------+--------+-----------+----------+--------------+
+|module   |error    |warning |refactor |convention   |
++======+=====+======+======+========+
+|example  |100.00   |66.67   |100.00   |100.00       |
++-----------+---------+----------+-----------+-------------+
+|text     |0.00     |33.33   |0.00     |0.00         |
++-----------+---------+----------+-----------+-------------+
+
+Messages
++-----------------------------+----------------+
+|message id                  |occurrences |
++=================+=========+
+|missing-docstring           |3                 |
++-----------------------------+----------------+
+|bad-whitespace              |3                 |
++------------------------------+---------------+
+|invalid-name                |2                 |
++------------------------------+---------------+
+|unused-import               |1                 |
++------------------------------+---------------+
+|unused-argument             |1                 |
++------------------------------+---------------+
+|too-many-function-args      |1                 | 
++------------------------------+---------------+
+|too-few-public-methods      |1                 |
++------------------------------+---------------+
+|protected-access            |1                 |
++------------------------------+---------------+
+|no-self-argument            |1                 |
++------------------------------+---------------+
+|import-error                |1                 |
++------------------------------+---------------+
+
+------------------------------------------------------------------------------------------
+Your code has been rated at 7.59/10 (previous run: 7.59/10, +0.00)
