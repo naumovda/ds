@@ -221,6 +221,167 @@ def complex(real=0.0, imag=0.0):
 	И это будет корректно с точки зрения Python.
 \end{frame}
 
+\begin{frame}[fragile]{Контроль типов}
+	Если необходимо проконтролировать, что переменной name будут присваиваться значения только строкового типа, мы должны: 
+	\begin{enumerate}
+		\item указать в комментарии о нашем намерение
+		\item использовать специальный инструмент, который выполнит соответствующую проверку.	
+	\end{enumerate}
+
+	Установка модуля с помощью pip:
+	\begin{minted}{bash}
+	python -m pip install mypy
+	\end{minted}
+	
+	Если мы сохраним приведенный выше код в файле type\_tester.py и выполним следующую команду:
+
+	\begin{minted}{bash}
+	python -m mypy test_type.py
+	\end{minted}
+	Получим такое сообщение:
+	\begin{minted}{bash}
+test_type.py:3: error: Incompatible types in assignment
+(expression has type "int", variable has type "str")
+	\end{minted}
+	Оно говорит о том, что обнаружено несоответствие типов в операции присваивание: переменная имеет тип str, а ей присвоено значение типа int.
+\end{frame}
+
+\begin{frame}[fragile]{ Обзор PEP’ов регламентирующий работу с аннотациями}
+	Работу с аннотациями регламентируют четыре ключевых документа: 
+	\begin{enumerate}
+		\item PEP 3107 — Function Annotations
+		\begin{itemize}
+			\item описывается синтаксис использования аннотаций в функциях Python
+			\item аннотации не имеют никакого семантического значения для интерпретатора Python и предназначены только для анализа сторонними приложениями
+			\item аннотировать можно аргументы функции и возвращаемое ей значение.
+		\end{itemize}
+		\item PEP 484 — Type Hints
+		\item PEP 526 — Syntax for Variable Annotations
+		\item PEP 563 — Postponed Evaluation of Annotations
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{ Обзор PEP’ов регламентирующий работу с аннотациями}
+	Работу с аннотациями регламентируют четыре ключевых документа: 
+	\begin{enumerate}
+		\item PEP 3107 — Function Annotations
+		\item PEP 484 — Type Hints
+		\begin{itemize}
+			\item представлены рекомендации по использованию аннотаций типов
+			\item аннотация типов упрощает статический анализ кода, рефакторинг, контроль типов в рантайме и кодогенерацию, использующую информацию о типах
+			\item определены следующие варианты работы с аннотациями:
+			\begin{itemize}
+				\item использование аннотаций в функциях согласно PEP 3107, 
+				\item аннотация типов переменных через комментарии в формате \# type: type\_name
+				\item использование stub-файлов.			
+			\end{itemize}
+		\end{itemize}		
+		\item PEP 526 — Syntax for Variable Annotations
+		\item PEP 563 — Postponed Evaluation of Annotations
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{ Обзор PEP’ов регламентирующий работу с аннотациями}
+	Работу с аннотациями регламентируют четыре ключевых документа: 
+	\begin{enumerate}
+		\item PEP 3107 — Function Annotations
+		\item PEP 484 — Type Hints
+		\item PEP 526 — Syntax for Variable Annotations
+		\begin{itemize}
+			\item приводится описание синтаксиса для аннотации типов переменных (базируется на PEP 484), использующего языковые конструкции, встроенные в Python.
+		\end{itemize}				
+		\item PEP 563 — Postponed Evaluation of Annotations
+		\begin{itemize}
+			\item предлагается использовать отложенную обработку аннотаций, это позволяет определять переменные до получения информации об их типах и ускоряет выполнение программы.
+		\end{itemize}		
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Использование аннотаций в функциях}
+	В функциях мы можем аннотировать аргументы и возвращаемое значение.
+	\begin{minted}{python}
+def repeater(s: str, n: int) -> str:
+	return s * n
+	\end{minted}
+	\begin{itemize}
+		\item аннотация для аргумента определяется через двоеточие после его имени;
+		\item аннотация, определяющая тип возвращаемого функцией значения, указывается после ее имени с использованием символов ->	;
+		\item доступ к аннотациям функции можно получить через атрибут \_\_annotations\_\_; 
+		\item аннотации представлены в виде словаря, где ключами являются атрибуты, а значениями - аннотации; 
+		\item возвращаемое функцией значение хранится в записи с ключом return;
+		\item для lambda-функций аннотации не поддерживаются.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Создание аннотированных переменных}
+	Можно использовать один из трех способов создания аннотированных переменных:
+	\begin{minted}{python}
+	var = value # type: annotation
+	var: annotation; var = value
+	var: annotation = value
+	\end{minted}
+
+	Рассмотрим это на примере работы со строковой переменной с именем name:
+	\begin{minted}{python}
+	name = 'John' # type: str
+	name: str; name = 'John'
+	name: str = 'John'
+	\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Создание аннотированных переменных}
+	\begin{minted}{python}
+	from typing import List, Tuple
+	# список
+	scores: List[int] = [1 ]
+	# кортеж
+	pack: Tuple[int, int, int] = (1 , 2, 3)
+	# логическая переменная
+	flag: bool
+	flag = True
+	# класс
+	class Point:
+		x: int
+		y: int		
+		def __init__(self, x: int, y: int):
+			self.x = x
+			self.y = y
+	\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Контроль типов с использованием аннотаций}
+	Для проверки можно использовать уже знакомый нам инструмент mypy. Напишем вот такой код:
+	\begin{minted}{python}
+	a: int = 10
+	b: int = 15	
+	def sq_sum(v1: int, v2: int) -> int:
+		return v1 ** 2 + v2 ** 2
+	print(sq_sum(a, b))
+	\end{minted}
+	
+	Сохраним его в файле с именем work.py и запустим mypy для анализа:
+	> python -m mypy work.py
+	
+	Если не указывать дополнительные ключи, то окно консоли будет чистым, т. к. mypy не найдет никаких ошибок в вашем коде.
+\end{frame}
+
+\begin{frame}[fragile]{Контроль типов с использованием аннотаций}
+	Но если заменить первую строку:
+	\begin{minted}{python}
+	а: int = 10
+	\end{minted}
+на такую:
+	\begin{minted}{python}
+	а: int = 10.3
+	\end{minted}
+	и вновь запустить mypy, то увидим вот такое сообщение:
+	\begin{minted}{bash}
+work.py:7: error: Argument 1 to 'sq_sum' has incompatible type 'float'; expected 'int'
+	\end{minted}
+
+	При этом, естественно, код будет выполняться без всяких проблем, потому что интерпретатор Python в данном случае не обращает внимание на аннотации.	
+\end{frame}
+
 \section{Работа с модулями}
 
 \begin{frame}
